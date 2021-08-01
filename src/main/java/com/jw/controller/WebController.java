@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.jw.constants.CodeConst;
 import com.jw.model.Product;
 import com.jw.repository.ProductRepository;
 
@@ -22,7 +23,7 @@ public class WebController implements ApplicationRunner {
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		String type = "fruit";
+		String type = CodeConst.PRODUCT_TYPE_FRUIT.getValue();
 		
 		List<Product> list = new ArrayList<>();
 		list.add(productRepository.save(Product.builder().productTp(type).productNm("딸기").productPr(new BigDecimal("1500")).build()));
@@ -33,7 +34,7 @@ public class WebController implements ApplicationRunner {
 		list.add(productRepository.save(Product.builder().productTp(type).productNm("메론").productPr(new BigDecimal("23000")).build()));
 		list.add(productRepository.save(Product.builder().productTp(type).productNm("블루베리").productPr(new BigDecimal("5000")).build()));
 		
-		type = "vegetable";
+		type = CodeConst.PRODUCT_TYPE_VEGETABLE.getValue();
 		list.add(productRepository.save(Product.builder().productTp(type).productNm("상추").productPr(new BigDecimal("1500")).build()));
 		list.add(productRepository.save(Product.builder().productTp(type).productNm("가지").productPr(new BigDecimal("4500")).build()));
 		list.add(productRepository.save(Product.builder().productTp(type).productNm("호박").productPr(new BigDecimal("6000")).build()));
@@ -51,7 +52,6 @@ public class WebController implements ApplicationRunner {
 	@RequestMapping("/")
 	public String jspCheck(Model model) {
 		
-		model.addAttribute("name", "name 입니다.");
 		return "index";
 	}
 }

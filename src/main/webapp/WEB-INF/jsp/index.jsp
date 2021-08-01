@@ -3,6 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/js/index.js"></script>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,18 +28,18 @@
 			</h2>
 			
 			<div class="form-inline" style="margin: 10px">
-				<select class="selectpicker">
+				<select class="selectpicker" id="productTp">
 				    <option value="fruit">과일</option>
 				    <option value="vegetable">채소</option>
 				 </select>
-				<input class="form-control mr-sm-2" type="text" style="margin: 10px" placeholder="검색어를 입력하세요."> 
-				<button class="btn btn-primary my-2 my-sm-0" style="margin: 10px">
+				<input class="form-control mr-sm-2" type="text" style="margin: 10px" placeholder="검색어를 입력하세요." id="keyword" name="keyword"> 
+				<button class="btn btn-primary my-2 my-sm-0" style="margin: 10px" id="searchBtn">
 					검색
 				</button>
-				<button class="btn btn-primary my-2 my-sm-0" style="margin: 10px">
+				<button class="btn btn-primary my-2 my-sm-0" style="margin: 10px" id="productBtn">
 					품목
 				</button>
-				<button class="btn btn-success my-2 my-sm-0" style="margin: 10px">
+				<button class="btn btn-success my-2 my-sm-0" style="margin: 10px" id="tokenBtn">
 					Token 발급
 				</button>
 			</div>
@@ -58,7 +61,7 @@
 					</tr>
 				</thead>
 				<!-- class="table-active"  table-success  table-warning table-danger-->
-				<tbody>
+				<tbody id="tableBody">
 					<tr>
 						<td>
 							1
