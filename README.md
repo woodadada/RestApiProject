@@ -19,7 +19,37 @@ HTML : bootstrap
 
 ## 프로젝트 구조
 
-
+```
+C:.
+├─gradle
+│  └─wrapper
+└─src
+    ├─main
+    │  ├─java
+    │  │  └─com
+    │  │      └─jw
+    │  │          ├─configuration
+    │  │          │  ├─exception
+    │  │          │  └─model
+    │  │          ├─constants
+    │  │          ├─controller
+    │  │          ├─model
+    │  │          ├─repository
+    │  │          └─service
+    │  ├─resources
+    │  │  ├─static
+    │  │  │  ├─css
+    │  │  │  ├─fonts
+    │  │  │  └─js
+    │  │  └─templates
+    │  └─webapp
+    │      └─WEB-INF
+    │          └─jsp
+    └─test
+        └─java
+            └─com
+                └─jw
+```
 프로젝트 구조입니다.
 
 
