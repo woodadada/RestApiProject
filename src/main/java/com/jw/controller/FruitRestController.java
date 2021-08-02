@@ -20,7 +20,7 @@ import lombok.RequiredArgsConstructor;
  * @RequiredArgsConstructor 어노테이션은 final 키워드를 갖는 클래스변수들을 초기화해주는 생성자를 만들어냅니다.
  * 즉, Bean을 주입받을 때 @Autowired 타입 주입방법을 선택하는 것이 아닌 생성자 주입을 받도록 유도합니다.
  */
-@RequestMapping("/fruits")
+@RequestMapping("/api/fruits")
 @RequiredArgsConstructor
 @RestController
 public class FruitRestController {

@@ -1,9 +1,16 @@
 $(function(){
 	var typeText = '채소';
-	var url = '';
+	var url = '/api/vegetables/product';
 	
    $('#searchBtn').on('click', function(e){
 	   var keyword = $('#keyword').val();
+	   
+	   var token = new URLSearchParams(window.location.hash).get('#access_token');
+	   
+	   if(token == '' || token == null){
+		   alert('토큰 발급을 진행하세요.');
+		   return;
+	   }
 	   
 	   if(keyword != ''){
 		   
@@ -16,6 +23,10 @@ $(function(){
 				data : 'name=' + keyword,
 				type:'GET',
 				dataType:'json',
+				beforeSend: function (xhr) {
+		            xhr.setRequestHeader("Content-type","application/json");
+		            xhr.setRequestHeader("Authorization", 'Bearer ' + token);
+		        },
 				success:function(data){
 					console.log(data);
 					
@@ -56,14 +67,21 @@ $(function(){
    var changeType = function(type){
 	   if(type == 'vegetable'){
 		   typeText = '채소';
-		   url = '/vegetables/product'; 
+		   url = '/api/vegetables/product'; 
 	   }else{
 		   typeText = '과일';
-		   url = '/fruits/product';
+		   url = '/api/fruits/product';
 	   }
    }
    
    $('#productBtn').on('click', function(e){
+	   
+	   var token = new URLSearchParams(window.location.hash).get('#access_token');
+	   
+	   if(token == '' || token == null){
+		   alert('토큰 발급을 진행하세요.');
+		   return;
+	   }
 	   
 	   var type = $('#productTp').val();
 	   
@@ -73,6 +91,10 @@ $(function(){
 			url : url,
 			type:'GET',
 			dataType:'json',
+			beforeSend: function (xhr) {
+	            xhr.setRequestHeader("Content-type","application/json");
+	            xhr.setRequestHeader("Authorization", 'Bearer ' + token);
+	        },
 			success:function(data){
 				console.log(data);
 				
@@ -107,8 +129,20 @@ $(function(){
 		});
 	   
    });
+   
    $('#tokenBtn').on('click', function(e){
-	   alert('tokenBtn 클릭');
+	   location.href = '/oauth/authorize?client_id=client&response_type=token&scope=read';
+	   
+//	   $.ajax({
+//			url : '/oauth/authorize?client_id=client&response_type=token&scope=read',
+//			type:'POST',
+//			success:function(data){
+//				console.log(data);
+//				
+//			},error:function(e){
+//				alert('에러 코드 : ' + e.responseJSON.code + '\n' + e.responseJSON.message);
+//			}
+//		});
    });
 	   
 }); // --> document.ready dom생성 후

@@ -4,6 +4,7 @@ import javax.persistence.EntityNotFoundException;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.security.oauth2.common.exceptions.UnauthorizedClientException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -32,6 +33,13 @@ public class RestExceptionHandler {
 	 * @param req
 	 * @return
 	 */
+	@ResponseStatus(HttpStatus.UNAUTHORIZED)
+	@ExceptionHandler(UnauthorizedClientException.class)
+	public ErrorResponse handlerException(Exception e, HttpServletRequest req) {
+		e.printStackTrace();
+		return new ErrorResponse(HttpStatus.BAD_REQUEST, e.getMessage(), null);
+	}
+	
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(BadRequestException.class)
     public ErrorResponse handlerRuntimeException(Exception e, 

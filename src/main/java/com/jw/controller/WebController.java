@@ -52,6 +52,6 @@ public class WebController implements ApplicationRunner {
 	@RequestMapping("/")
 	public String jspCheck(Model model) {
 		
-		return "index";
+		return "search";
 	}
 }
