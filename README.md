@@ -10,8 +10,11 @@ Access Token에 대한 이해를 목표로 잡은 프로젝트로 그 외에는
 ```
 IDE : STS 4
 JAVA : jdk 11
+FrameWork : Spring boot 2.5.3
 DB : H2
-ORM : JPA
+ORM : JPAs
+spring-security-oauth2 : 2.3.5
+Spring Security
 lombok
 Front : JavaScipt
 HTML : bootstrap
@@ -20,7 +23,6 @@ HTML : bootstrap
 ## 프로젝트 구조
 
 ```
-C:.
 ├─gradle
 │  └─wrapper
 └─src
@@ -30,7 +32,8 @@ C:.
     │  │      └─jw
     │  │          ├─configuration
     │  │          │  ├─exception
-    │  │          │  └─model
+    │  │          │  ├─model
+    │  │          │  └─security
     │  │          ├─constants
     │  │          ├─controller
     │  │          ├─model
