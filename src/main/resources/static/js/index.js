@@ -123,6 +123,7 @@ $(function(){
 					$('#tableBody').html('');
 				}
 			},error:function(e){
+				console.log(e);
 				alert('에러 코드 : ' + e.responseJSON.code + '\n' + e.responseJSON.message);
 				$('#tableBody').html('');
 			}

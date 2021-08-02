@@ -33,12 +33,12 @@ public class RestExceptionHandler {
 	 * @param req
 	 * @return
 	 */
-	@ResponseStatus(HttpStatus.UNAUTHORIZED)
-	@ExceptionHandler(UnauthorizedClientException.class)
-	public ErrorResponse handlerException(Exception e, HttpServletRequest req) {
-		e.printStackTrace();
-		return new ErrorResponse(HttpStatus.BAD_REQUEST, e.getMessage(), null);
-	}
+//	@ResponseStatus(HttpStatus.UNAUTHORIZED)
+//	@ExceptionHandler(UnauthorizedClientException.class)
+//	public ErrorResponse handlerException(Exception e, HttpServletRequest req) {
+//		e.printStackTrace();
+//		return new ErrorResponse(HttpStatus.BAD_REQUEST, e.getMessage(), null);
+//	}
 	
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(BadRequestException.class)
