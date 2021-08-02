@@ -1,7 +1,6 @@
 # RestApiProjct
 
 Access Token을 사용한 RestApiProject 입니다.
-현재 개발 중 입니다.
 
 Access Token에 대한 이해를 목표로 잡은 프로젝트로 그 외에는 
 간단한 과일, 채소 가게의 검색 프로젝트입니다.
