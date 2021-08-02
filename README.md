@@ -61,12 +61,29 @@ C:.
 |Get|/vegetable/product|채소 목록 조회|완료|
 |Get|/vegetable/product?name=호박|채소 가격 조회|완료|
 
+## Front 화면 설명 로그인
+![image](https://user-images.githubusercontent.com/60130985/127902605-f672ed00-dff5-493f-877f-1e66b6b32fb3.png)
+```
+ID : user1
+PW : pass
+```
+
+![image](https://user-images.githubusercontent.com/60130985/127902984-c2d04f34-20aa-4cab-89fa-5a5e81b0d4d9.png)
+```
+로그인 후에 노출 되는 화면 입니다.
+제품 분류 별 토큰 발급은 미개발 상태이며 통합 토큰을 발급하고 있습니다.
+토큰 발급이 선행되어야 정보 조회가 가능합니다.
+```
+
 ## TEST
 
 테스트는 Postman을 사용하였습니다.
 front 페이지도 개발 중이라서 확인이 가능합니다.
 테스트 데이터는 서버 실행 시 
 WebController에서 ApplicationRunner를 구현해 run method로 insert 되고 있습니다. 
+
+2021-08-03
+oauth access token 이 추가 개발되어 token을 같이 넣어야 조회가 되고 있습니다.
 
 ```
 http://localhost:8080 로컬 접속 주소 입니다.
@@ -109,5 +126,8 @@ http://localhost:8080 로컬 접속 주소 입니다.
 	private Date regDt;
   
 ```
+
+
+
 
 
